@@ -19,6 +19,8 @@ obstaclesImg2.src = '../images/obstacle.png'
 
 const startBtn = document.getElementById('start-button') 
 
+const myObstacles = []
+
 
 //game variables
 let gameOver = false
@@ -39,6 +41,16 @@ let isNotMoving = true
 
 let obstacleY = 0
 let obstacleX = 0
+
+let maxHeight = 200
+let minHeight = 20
+
+let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight)
+
+let minGap = 50
+let maxGap =200
+
+let gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap)
 
 let score= 0
 
@@ -92,6 +104,12 @@ window.onload = () => {
 
     if (obstacleX > 600) {
       obstacleX = -300
+    }
+
+    myCanvas.frames += 1
+
+    if (myCanvas.frames % 120 === 0) {
+    
     }
 
     if(!gameOver){
